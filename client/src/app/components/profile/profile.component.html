@@ -1,0 +1,9 @@
+<div class="profile-container">
+  <mat-list *ngIf="user">
+    <h2> {{ user.name }} </h2>
+    <mat-divider></mat-divider>
+    <mat-list-item> Username: {{ user.username }} </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item> Email: {{ user.email }} </mat-list-item>
+   </mat-list>
+</div>

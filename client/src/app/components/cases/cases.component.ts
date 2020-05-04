@@ -16,7 +16,7 @@ export class CasesComponent implements AfterViewInit, OnInit {
   dataSource: CasesDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['_id', 'first_name', 'last_name', 'gender', 'age', 'email', 'country', 'status'];
 
   ngOnInit() {
     this.dataSource = new CasesDataSource();

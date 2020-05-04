@@ -25,9 +25,14 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from "@auth0/angular-jwt";
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { CasesComponent } from './components/cases/cases.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,8 @@ import { MatMenuModule } from '@angular/material/menu';
     LoginComponent,
     ProfileComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    CasesComponent
   ],
   imports: [
     BrowserModule,
@@ -65,8 +71,11 @@ import { MatMenuModule } from '@angular/material/menu';
     }),
     MatGridListModule,
     MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
-  providers: [ValidateService, AuthService],
+  providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

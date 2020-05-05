@@ -15,7 +15,7 @@
         </div> -->
         <div class="row">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance="fill">
               <input matInput placeholder="Username" formControlName="username" [(ngModel)]="addressForm.value.username">
               <mat-error *ngIf="addressForm.controls['username'].hasError('required')">
                 A username is <strong>required</strong>
@@ -23,8 +23,11 @@
             </mat-form-field>
           </div>
           <div class="col">
-            <mat-form-field class="full-width">
-              <input matInput placeholder="Password" formControlName="password" [(ngModel)]="addressForm.value.password">
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password" [(ngModel)]="addressForm.value.password">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
               <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
                 Your password is <strong>required</strong>
               </mat-error>
@@ -101,7 +104,7 @@
       </mat-card-actions>
       <mat-divider></mat-divider>
       <mat-card-content>
-        <p mat-line>Don't have an Account? <a href="#">Sign Up</a></p>
+        <p mat-line>Don't have an Account? <a [routerLink]="['/register']" href="#">Sign Up</a></p>
       </mat-card-content>
     </mat-card>
   </form>

@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginComponent } from './components/login/login.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -59,6 +60,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
+    MatSnackBarModule,
     ReactiveFormsModule,
     FlashMessagesModule.forRoot(),
     HttpClientModule,

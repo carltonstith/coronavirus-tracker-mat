@@ -9,6 +9,9 @@
       <a mat-list-item *ngIf="authService.loggedIn()" [routerLink]="['/dashboard']">Dashboard</a>
       <a mat-list-item *ngIf="authService.loggedIn()" [routerLink]="['/profile']">Profile</a>
       <a mat-list-item *ngIf="authService.loggedIn()" [routerLink]="['/cases']">Cases</a>
+      <!-- <a mat-list-item *ngIf="authService.loggedIn()" [routerLink]="['/cases-add']">Cases-Add</a>
+      <a mat-list-item *ngIf="authService.loggedIn()" [routerLink]="['/cases-edit']">Cases Edit</a>
+      <a mat-list-item *ngIf="authService.loggedIn()" [routerLink]="['/cases-details']">Cases Details</a> -->
       <a mat-list-item *ngIf="!authService.loggedIn()" [routerLink]="['/login']">Login</a>
       <a mat-list-item *ngIf="!authService.loggedIn()" [routerLink]="['/register']">Register</a>
       <a mat-list-item *ngIf="authService.loggedIn()" (click)="onLogoutClick()" href="#">Logout</a>

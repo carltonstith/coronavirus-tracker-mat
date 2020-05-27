@@ -1,10 +1,6 @@
-// .full-width-table {
-//   width: 100%;
-// }
-/* Structure */
 .example-container {
   position: relative;
-  padding: 5px;
+  padding: 20px;
 }
 
 .example-table-container {
@@ -50,3 +46,15 @@ table {
   margin: 5px;
 }
 
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+  padding-right: 24px;
+  padding-left: 24px;
+}
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  padding: 0 10px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.button-row {
+  padding: 25px 20px;
+}

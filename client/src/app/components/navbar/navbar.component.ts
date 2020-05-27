@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  user: any;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -20,7 +21,15 @@ export class NavbarComponent implements OnInit {
 
   constructor(private breakpointObserver: BreakpointObserver, public authService: AuthService, private router: Router,) {}
 
-  ngOnInit(): void{}
+  ngOnInit(): void{
+    this.authService.getProfile().subscribe(profile => {
+      this.user = profile.user;
+    },
+    err => {
+      console.log(err);
+      return false;
+    })
+  }
 
   onLogoutClick() {
     this.authService.logout();

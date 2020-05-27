@@ -4,6 +4,16 @@
 
 .sidenav {
   width: 200px;
+  background-color: #304357;
+}
+.title {
+  color: #6d7c85;
+}
+.mat-toolbar {
+  color: #fff;
+}
+.mat-list-item {
+  color: #b4bcc8;
 }
 
 .sidenav .mat-toolbar {
@@ -14,4 +24,5 @@
   position: sticky;
   top: 0;
   z-index: 1;
+  background: #ffffff;
 }

@@ -1,4 +1,4 @@
-<div class="example-container mat-elevation-z8">
+<div class="cases-container mat-elevation-z8">
   <!-- <h2>Covid 19 Cases</h2> -->
   <div class="example-loading-shade" *ngIf="isLoadingResults">
     <mat-spinner></mat-spinner>
@@ -12,51 +12,51 @@
     <div class="button-row">
       <a mat-flat-button color="primary" [routerLink]="['/cases-add']"><mat-icon>add</mat-icon>Cases</a>
 
-      <a mat-flat-button color="accent" [routerLink]="['/stats']"><mat-icon>bar_chart</mat-icon>Stats</a>
+      <!-- <a mat-flat-button color="accent" [routerLink]="['/stats']"><mat-icon>bar_chart</mat-icon>Stats</a> -->
     </div>
-    <table mat-table [dataSource]="data" class="example-table" matSort matSortActive="first_name" matSortDisableClear matSortDirection="asc">
+    <table mat-table [dataSource]="data" class="cases-table-container" matSort matSortActive="first_name" matSortDisableClear matSortDirection="asc">
 
-      <ng-container matColumnDef="_id">
+      <ng-container matColumnDef="_id" class="flex-item">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
         <td mat-cell *matCellDef="let row">{{row._id}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="first_name">
+      <ng-container matColumnDef="first_name" class="flex-item">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
         <td mat-cell *matCellDef="let row">{{row.first_name}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="last_name">
+      <ng-container matColumnDef="last_name" class="flex-item">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
         <td mat-cell *matCellDef="let row">{{row.last_name}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="gender">
+      <ng-container matColumnDef="gender" class="flex-item">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Gender</th>
         <td mat-cell *matCellDef="let row">{{row.gender}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="age">
+      <ng-container matColumnDef="age" class="flex-item">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Age</th>
         <td mat-cell *matCellDef="let row">{{row.age}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="email">
+      <ng-container matColumnDef="email" class="flex-item">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
         <td mat-cell *matCellDef="let row">{{row.email}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="country">
+      <ng-container matColumnDef="country" class="flex-item">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Country</th>
         <td mat-cell *matCellDef="let row">{{row.country}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="status">
+      <ng-container matColumnDef="status" class="flex-item">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
         <td mat-cell *matCellDef="let row">{{row.status}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="actions">
+      <ng-container matColumnDef="actions" class="flex-item">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let row">
           <button mat-icon-button matTooltip="Click to Edit" class="iconbutton" color="primary" [routerLink]="['/cases-edit', row._id]">

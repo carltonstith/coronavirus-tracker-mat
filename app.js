@@ -28,7 +28,8 @@ const users = require('./routes/users');
 const cases = require('./routes/cases');
 
 // Port Number
-const port = 3200;
+// const port = 3200; // Use for localhost
+const port = process.env.PORT || 8080; // Use for Heroku
 
 // CORS Middleware
 app.use(cors());
@@ -52,6 +53,10 @@ app.use('/daily/', cases);
 // Index Route
 app.get('/', (req, res) => {
   res.send('Invalid Endpoint!');
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 app.listen(port, () => {

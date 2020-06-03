@@ -6,6 +6,6 @@
 
 // MongoDB Atlas
 module.exports = {
-  database: 'mongodb+srv://dbCoronaUser:corona123@clustercoronavirustracker-84dzq.mongodb.net/coronavirus-tracker?retryWrites=true&w=majority',
+  database: 'mongodb+srv://dbCoronaUser:corona123@clustercoronavirustracker-84dzq.mongodb.net/test?retryWrites=true&w=majority',
   secret: 'yoursecret'
 }

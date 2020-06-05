@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -26,14 +27,26 @@ export class AuthService {
     return this.http.post<any>('users/authenticate', user, httpOptions);
   }
 
-  getProfile(): Observable<any> {
-    this.loadToken();
-    let httpOptions = { headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': this.authToken
-    }) };
-    // return this.http.get<any>('http://localhost:3200/users/profile', httpOptions);
-    return this.http.get<any>('https://secure-forest-99062.herokuapp.com/profile', httpOptions);
+  // getProfile(): Observable<any> {
+  //   this.loadToken();
+  //   let httpOptions = { headers: new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     'Authorization': this.authToken
+  //   }) };
+  //   // return this.http.get<any>('http://localhost:3200/users/profile', httpOptions);
+  //   return this.http.get<any>('users/profile', httpOptions);
+  // }
+
+  getProfile() {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: this.authToken
+      });
+      this.loadToken();
+      return this.http.get('users/profile', {
+        headers: headers
+      })
+      .pipe(map(res => res));
   }
 
   storeUserData(token, user) {

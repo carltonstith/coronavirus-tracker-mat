@@ -33,7 +33,7 @@ export class AuthService {
       'Authorization': this.authToken
     }) };
     // return this.http.get<any>('http://localhost:3200/users/profile', httpOptions);
-    return this.http.get<any>('users/profile', httpOptions);
+    return this.http.get<any>('https://secure-forest-99062.herokuapp.com/profile', httpOptions);
   }
 
   storeUserData(token, user) {
